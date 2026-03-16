@@ -28,19 +28,49 @@ int main()
 
   cout << "Enter the number of units sold\n";
   // TODO
-
+  cin >> numberofSold;
   // Input Validation
   // TODO
 
   // Determine discount rate based on quantity
   // TODO
+if (numberofSold < 10 and numberofSold >= 0){
+  originalAmount = numberofSold*Price;
+  discountAmount = 0;
+  totalCost = originalAmount;
+}
+else if (numberofSold >= 10 and numberofSold < 20){
+  originalAmount = numberofSold*Price;
+  discountAmount = originalAmount*PERC19;
+  totalCost = originalAmount-discountAmount;
+}
+else if (numberofSold >= 20 and numberofSold < 50){
+  originalAmount = numberofSold*Price;
+  discountAmount = originalAmount*PERC49;
+  totalCost = originalAmount-discountAmount;
+}
+else if (numberofSold >= 50 and numberofSold <100){
+  originalAmount = numberofSold*Price;
+  discountAmount = originalAmount*PERC99;
+  totalCost = originalAmount-discountAmount;
+}
+else if (numberofSold >= 100){
+  originalAmount = numberofSold*Price;
+  discountAmount = originalAmount*PERC100;
+  totalCost = originalAmount-discountAmount;
+}
 
   // Calculate original amount, discount, and total
   // TODO
 
   /* To print out your result, use the following statements */
+if (numberofSold >= 0){
   cout << setprecision(2) << fixed;
   cout << "Original amount is " << originalAmount << endl;
   cout << "Discount amount is " << discountAmount << endl;
   cout << "Total Price is " << totalCost << endl;
+}
+else if (numberofSold < 0){
+  cout << "Error, please provide a positive number of sold." << endl;
+}
 }
