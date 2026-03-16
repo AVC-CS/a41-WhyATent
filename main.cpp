@@ -23,7 +23,7 @@ int main()
   const double PERC99 = 0.4;
   const double PERC100 = 0.5;
   const double Price = 99.00;
-  double totalCost, originalAmount, discountAmount, dRate;
+  double totalCost, discountAmount, dRate;
   int numberofSold;
 
   cout << "Enter the number of units sold\n";
@@ -34,28 +34,24 @@ int main()
 
   // Determine discount rate based on quantity
   // TODO
+  double originalAmount = numberofSold*Price;
 if (numberofSold < 10 and numberofSold >= 0){
-  originalAmount = numberofSold*Price;
   discountAmount = 0;
   totalCost = originalAmount;
 }
 else if (numberofSold >= 10 and numberofSold < 20){
-  originalAmount = numberofSold*Price;
   discountAmount = originalAmount*PERC19;
   totalCost = originalAmount-discountAmount;
 }
 else if (numberofSold >= 20 and numberofSold < 50){
-  originalAmount = numberofSold*Price;
   discountAmount = originalAmount*PERC49;
   totalCost = originalAmount-discountAmount;
 }
 else if (numberofSold >= 50 and numberofSold <100){
-  originalAmount = numberofSold*Price;
   discountAmount = originalAmount*PERC99;
   totalCost = originalAmount-discountAmount;
 }
 else if (numberofSold >= 100){
-  originalAmount = numberofSold*Price;
   discountAmount = originalAmount*PERC100;
   totalCost = originalAmount-discountAmount;
 }
